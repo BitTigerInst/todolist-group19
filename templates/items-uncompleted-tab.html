@@ -1,0 +1,10 @@
+<table class="table" ng-controller="itemsUncompletedController">
+  <tr>
+    <th>Item Detail</th>
+    <th>complete</th>
+  </tr>
+  <tr ng-repeat="item in items | filter:{'status': 'uncompleted'} | filter: filterCondition">
+    <td>{{item.detail}}</td>
+    <td><button type="button" class="btn btn-success" ng-click="completeItem(item)">完成</button></td>
+  </tr>
+</table>

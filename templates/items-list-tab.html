@@ -1,0 +1,12 @@
+<table class="table" ng-controller="itemsListController">
+  <tr>
+    <th>Item Detail</th>
+    <th>Status</th>
+    <th>delete</th>
+  </tr>
+  <tr ng-repeat="item in items | filter:filterCondition">
+    <td>{{item.detail}}</td>
+    <td><span ng-class="getClass(item)">{{item.status}}</span></td>
+    <td><button type="button" class="btn btn-warning" ng-click="removeItem(item)">删除</button></td>
+  </tr>
+</table>

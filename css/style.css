@@ -1,0 +1,24 @@
+.container {
+  border: 1px solid #DDD;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+/*#add-item-input {
+  width: 70%;
+}
+
+#add-item-button {
+  width: 20%;
+}*/
+
+#form-area {
+  margin:0px auto;
+}
+
+.panel {
+  margin-bottom: 0px;
+  border-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
