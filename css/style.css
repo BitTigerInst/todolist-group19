@@ -1,0 +1,33 @@
+.main-container {
+	width: 60%;
+}
+
+nav {
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.tab ul {
+	padding: 0;
+}
+
+.tab ul li{
+	display: inline-block;
+	text-align: center;
+}
+
+
+.single-task {
+	width: 100%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.date {
+	text-align: right;
+}
+
+.completed {
+	color: gray;
+	text-decoration: line-through;
+}

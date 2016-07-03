@@ -1,0 +1,24 @@
+<div class="single-task">
+
+	<div class="row">
+		<div class="col-xs-1 col-sm-1 col-md-1">
+			<input ng-click="complete(task)" type="checkbox" class="pull-left">
+		</div>
+
+		<div class="col-xs-7 col-sm-7 col-md-7">
+			<p ng-class="{completed: task.completed}"> {{ task.content }} </p>
+
+		</div>
+		
+		<div class="col-xs-3 col-sm-3 col-md-3 date">
+			<p> {{task.date | date}} </p>	
+		</div>
+
+		<div class="col-xs-1 col-sm-1 col-md-1">
+			<p ng-click="removeTask(task)"><span class="glyphicon glyphicon-remove"></span></p>
+		</div>
+		
+	</div>
+	
+
+</div>
