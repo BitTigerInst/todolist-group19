@@ -1,12 +1,13 @@
   app.controller('MainCtrl', function($scope, $rootScope) {
   $scope.title = 'To Do List'; 
+  console.log("MainCtrl");
 
-  $scope.tasks = $rootScope.taks;
+  // var tasks = $rootScope.tasks;
 
   $scope.complete = function(task){
     //get the index
-    var index = $scope.tasks.indexOf(task);
-    $scope.tasks[index].completed = !$scope.tasks[index].completed;
+    var index = $rootScope.tasks.indexOf(task);
+    $rootScope.tasks[index].completed = !$scope.tasks[index].completed;
   };
 
   $scope.addTask = function(task){
@@ -27,20 +28,13 @@
   };
 
   $scope.removeTask = function(task) {
-    var index = $scope.tasks.indexOf(task);
-    $scope.tasks.splice(index,1);
+    var index = $rootScope.tasks.indexOf(task);
+    $rootScope.tasks.splice(index,1);
 
   };
 
   $scope.showTasks = function(){
-    firebase.database().ref('todo').on('child_added', function(data) {
-      console.log(data.val());
-      $scope.tasks = data.val();
-      console.log($scope.tasks);
-
-
-    });
-
+    console.log($rootScope.tasks);
   };
 
   
