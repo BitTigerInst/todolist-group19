@@ -1,6 +1,17 @@
 <!doctype html>
 <html>
 <head>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBK9lvSZHgFZ0AUL8-UyhDhTGZSGqXG7no",
+      authDomain: "todoslist-fddc5.firebaseapp.com",
+      databaseURL: "https://todoslist-fddc5.firebaseio.com",
+      storageBucket: "todoslist-fddc5.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
@@ -16,8 +27,6 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-
   <!-- Modules -->
   <script src="js/app.js"></script>
 
@@ -28,6 +37,9 @@
   <script src="js/directives/directives.js"></script>
 
   <script src="js/services/services.js"></script>
+
+
+    
 </head>
 
 
@@ -53,6 +65,7 @@
               <li><a href="">All</a></li>
               <li><a href="">Active</a></li>
               <li><a href="">Completed</a></li>
+              <li><a href="">Trash</a></li>
             </ul>
           </div>
 
@@ -60,7 +73,7 @@
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search for...">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button" ng-click="add">Go!</button>
+                <button class="btn btn-default" type="button" ng-click="showTasks()">Go!</button>
               </span>
             </div><!-- /input-group -->
           </div><!-- /col-sm-6 -->

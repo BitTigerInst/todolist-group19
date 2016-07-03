@@ -10,7 +10,6 @@ app.factory('TasksStorage', function($firebase){
 		tasks: []
 	}
 
-
     
 
     firebase.initializeApp(config);
