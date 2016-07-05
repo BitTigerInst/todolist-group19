@@ -9,13 +9,29 @@ nav {
 
 .tab ul {
 	padding: 0;
+	list-style: none;
 }
 
 .tab ul li{
+	width: 32%;
+	margin: 2px;
+	border-bottom: 1px solid gray;
 	display: inline-block;
 	text-align: center;
 }
 
+.tab ul li a {
+	text-decoration: none;
+	color: inherit;
+	border-radius: 3px;
+	padding-left: 35%;
+    padding-right: 35%;
+}
+
+.tab ul li.selected {
+	border-bottom: 3px solid #fb9787;
+}
+	
 
 .single-task {
 	width: 100%;

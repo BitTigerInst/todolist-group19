@@ -3,20 +3,7 @@
 [debug] CLI Version:  3.0.4
 [debug] Platform:     darwin
 [debug] Node Version: v4.4.6
-[debug] Time:         Sun Jul 03 2016 10:21:01 GMT-0500 (CDT)
-[debug] ----------------------------------------------------------------------
-[debug] 
-[info] Starting Firebase development server...
-[info] 
-[warn] ⚠  No Firebase project directory detected. Serving static content from /Users/OhIris/Web Project/projects/todosList
-[info] 
-[info] Server listening at: http://localhost:5000
-[debug] ----------------------------------------------------------------------
-[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] CLI Version:  3.0.4
-[debug] Platform:     darwin
-[debug] Node Version: v4.4.6
-[debug] Time:         Sun Jul 03 2016 11:35:17 GMT-0500 (CDT)
+[debug] Time:         Mon Jul 04 2016 11:20:20 GMT-0500 (CDT)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [info] Starting Firebase development server...

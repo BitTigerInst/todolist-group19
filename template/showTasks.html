@@ -1,8 +1,10 @@
 <div class="single-task">
+	
+	<script>console.log("template");</script>
 
 	<div class="row">
 		<div class="col-xs-1 col-sm-1 col-md-1">
-			<input ng-click="complete(task)" type="checkbox" class="pull-left">
+			<input ng-click="complete(task)" ng-checked="task.completed === true" type="checkbox" class="pull-left">
 		</div>
 
 		<div class="col-xs-7 col-sm-7 col-md-7">

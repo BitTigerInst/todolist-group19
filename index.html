@@ -11,83 +11,86 @@
       storageBucket: "todoslist-fddc5.appspot.com",
     };
     firebase.initializeApp(config);
-  </script>
+    </script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http:////ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
-  <!-- Modules -->
-  <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 
-  <!-- Controllers -->
-  <script src="js/controllers/controllers.js"></script>
+    <!-- Modules -->
+    <script src="js/app.js"></script>
 
-  <!-- Directives -->
-  <script src="js/directives/directives.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/controllers.js"></script>
 
-  <script src="js/services/services.js"></script>
+    <!-- Directives -->
+    <script src="js/directives/directives.js"></script>
 
-
+    <script src="js/services/services.js"></script>
     
-</head>
+  </head>
 
 
-<body ng-app="todosList">
+  <body ng-app="todosList">
 
-  <div class="content" ng-controller="MainCtrl">
-    <div class="container main-container">
+    <div class="content" ng-controller="MainCtrl" ng-init="initTasks()">
+      <div class="container main-container">
 
-      <header>
-        <h1>{{ title }}</h1>
-        <div class="input-group">
-          <input ng-model="inputTask" type="text" class="form-control" placeholder="Input a task">
-          <span class="input-group-btn">
-            <button ng-click="addTask(inputTask)" class="btn btn-default" type="button">Go!</button>
-          </span>
-        </div><!-- /input-group -->
-      </header>
+        <header>
+          <h1>{{ title }}</h1>
+          <div class="input-group">
+            <input ng-model="inputTask" type="text" class="form-control" placeholder="Input a task">
+            <span class="input-group-btn">
+              <button ng-click="addTask(inputTask)" class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </header>
+        <script>console.log("index");</script>
 
-      <nav>
-        <div class="row">
-          <div class="col-sm-6 col-md-6 tab">
+
+        <nav>
+          <div class="tab">
             <ul>
-              <li><a href="">All</a></li>
-              <li><a href="">Active</a></li>
-              <li><a href="">Completed</a></li>
-              <li><a href="">Trash</a></li>
+              <li ng-class="{selected: status === ''}">
+                <a href="#/" ng-click="changeStatus('')">All</a>
+              </li>
+              <li ng-class="{selected: status === 'active'}">
+                <a href="#/active" ng-click="changeStatus('active')">Active</a>
+              </li>
+              <li ng-class="{selected: status === 'completed'}">
+                <a href="#/completed" ng-click="changeStatus('completed')">Completed</a>
+              </li>
             </ul>
           </div>
 
-          <div class="col-sm-6 col-md-6">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button" ng-click="">Go!</button>
-              </span>
-            </div><!-- /input-group -->
-          </div><!-- /col-sm-6 -->
+          <!-- <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click="">Go!</button>
+            </span>
+          </div> --><!-- /input-group -->
           
-        </div>
-        
-      </nav>
 
-      <div class="tasks" ng-repeat="task in tasks">
-        <show-tasks></show-tasks>
-      </div>
-      
-    </div><!-- /container -->
-  </div><!-- /content -->
-</body>
-</html>
+        </nav>
+
+        <div class="tasks" ng-repeat="task in tasks | filter: statusFilter ">
+          <show-tasks></show-tasks>
+        </div>
+
+      </div><!-- /container -->
+    </div><!-- /content -->
+  </body>
+  </html>
 
