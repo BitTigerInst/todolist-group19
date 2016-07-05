@@ -4,6 +4,7 @@
 
   $scope.initTasks = function(){
     $scope.tasks = TasksFetchService.getInitTasks(); 
+    console.log($scope.tasks.length);
   };
   
 
@@ -20,10 +21,15 @@
   $scope.changeStatus = function(changedStatus){
     $scope.status = changedStatus;
     console.log("changed : "+$scope.status);
+    console.log($scope.search);
     $scope.statusFilter = ($scope.status === 'active') ? 
       { completed: false } : ($scope.status === 'completed') ? 
-      { completed: true } : {};
+      { completed: true } : ($scope.search) ? 
+      { content: $scope.search } : {};
+  };
 
+  $scope.filterTask = function(content){
+    $scope.statusFilter = {content: content};
   };
 
   $scope.complete = function(task){

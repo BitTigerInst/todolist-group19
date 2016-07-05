@@ -31,13 +31,7 @@ app.config(function($routeProvider){
 			controller: 'MainCtrl',
 			templateUrl: 'index.html',
 			resolve: {
-				store: function (TasksFetchService) {
-					// Get the correct module (API or localStorage).
-					return TasksFetchService.then(function (module) {
-						module.get(); // Fetch the todo records in the background.
-						return module;
-					});
-				}
+				
 			}
 		})
 		.when('/:status', {

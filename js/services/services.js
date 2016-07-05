@@ -1,4 +1,4 @@
-app.factory('TasksFetchService', function(){
+app.factory('TasksFetchService', function($q){
 
   var o = {
     tasks: [],
