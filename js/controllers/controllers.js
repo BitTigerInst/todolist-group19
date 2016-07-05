@@ -3,33 +3,31 @@
   console.log("MainCtrl");
 
   $scope.initTasks = function(){
-    $scope.tasks = TasksFetchService.getInitTasks(); 
-    console.log($scope.tasks.length);
+    $scope.tasks = TasksFetchService.getInitTasks();
   };
+
   
-
-  $scope.status = '';
-
-  // $scope.$on('$routeChangeSucces', function(){
-  //   $scope.status = $routeParams.status || '';
-  //   console.log($scope.status);
-  //   $scope.statusFilter = ($scope.status === 'active') ? 
-  //     { completed: false } : ($scope.status === 'completed') ? 
-  //     { compelted: true } : {};
-  // });
-
-  $scope.changeStatus = function(changedStatus){
-    $scope.status = changedStatus;
-    console.log("changed : "+$scope.status);
-    console.log($scope.search);
-    $scope.statusFilter = ($scope.status === 'active') ? 
+    $scope.status = $routeParams.status || '';
+    console.log("hahah: " + $scope.status);
+     $scope.statusFilter = ($scope.status === 'active') ? 
       { completed: false } : ($scope.status === 'completed') ? 
       { completed: true } : ($scope.search) ? 
       { content: $scope.search } : {};
-  };
+
+  // $scope.changeStatus = function(changedStatus){
+  //   $scope.status = changedStatus;
+  //   console.log("changed : "+$scope.status);
+  //   console.log($scope.search);
+  //   $scope.statusFilter = ($scope.status === 'active') ? 
+  //     { completed: false } : ($scope.status === 'completed') ? 
+  //     { completed: true } : ($scope.search) ? 
+  //     { content: $scope.search } : {};
+  // };
 
   $scope.filterTask = function(content){
     $scope.statusFilter = {content: content};
+    $scope.search = '';
+
   };
 
   $scope.complete = function(task){

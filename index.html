@@ -25,7 +25,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="http:////ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -48,48 +48,10 @@
     <div class="content" ng-controller="MainCtrl" ng-init="initTasks()">
       <div class="container main-container">
 
-        <header>
-          <h1>{{ title }}</h1>
-
-          <form class="form-inline">
-            <div class="form-group pull-left">
-              <input ng-model="inputTask" type="text" class="form-control" placeholder="add task here">
-            </div>
-            <button ng-click="addTask(inputTask)" class="btn btn-default" type="button">ADD</button>
-            <div class="pull-right">
-              <div class="form-group">
-                <input ng-model="search" type="text" class="form-control" placeholder="search a task here">
-              </div>
-              <button ng-click="filterTask(search)" type="submit" class="btn btn-default">SEARCH</button>
-            </div>
-            
-          </form>
-        </header>
         <script>console.log("index");</script>
 
-
-        <nav>
-          <div class="tab">
-            <ul>
-              <li ng-class="{selected: status === ''}">
-                <a href="#/" ng-click="changeStatus('')">All</a>
-              </li>
-              <li ng-class="{selected: status === 'active'}">
-                <a href="#/active" ng-click="changeStatus('active')">Active</a>
-              </li>
-              <li ng-class="{selected: status === 'completed'}">
-                <a href="#/completed" ng-click="changeStatus('completed')">Completed</a>
-              </li>
-            </ul>
-          </div>
-
-
-        </nav>
-
-        <div class="tasks" ng-repeat="task in tasks | filter: statusFilter">
-          <show-tasks></show-tasks>
-        </div>
-
+        <ng-view></ng-view>
+        
       </div><!-- /container -->
     </div><!-- /content -->
   </body>

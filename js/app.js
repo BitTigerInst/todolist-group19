@@ -23,20 +23,20 @@ app.run(function($rootScope){
 });
 
 app.config(function($routeProvider){
-	'use strict';
 	console.log("config");
+
 
 	$routeProvider
 		.when('/', {
 			controller: 'MainCtrl',
-			templateUrl: 'index.html',
+			templateUrl: 'template/showTasks.html',
 			resolve: {
 				
 			}
 		})
 		.when('/:status', {
 			controller: 'MainCtrl',
-			templateUrl: 'index.html',
+			templateUrl: 'template/showTasks.html',
 		})
 		.otherwise({
 			redirectTo: '/',
