@@ -1,8 +1,7 @@
 Hello Angular
 
-So far,
 
-run the application by using a local server
+run the application by using a firebase server
 
-1. In terminal, npm install http-server -g
-2. Go to the file and run, http-server
+$ npm install -g firebase-tools
+$ firebase serve
