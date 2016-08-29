@@ -1,4 +1,4 @@
-  app.controller('MainCtrl', function($scope, $routeParams, loadedTasks) {
+  app.controller('MainCtrl', function($scope, $routeParams, loadedTasks, TasksFetchService) {
   $scope.title = 'To Do List'; 
   console.log("MainCtrl");
 
@@ -68,6 +68,7 @@
     });
 
     $scope.tasks = TasksFetchService.getAddedTasks();
+    console.log($scope.tasks);
 
     $scope.inputTask = null;
 
