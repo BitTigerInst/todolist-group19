@@ -7,6 +7,7 @@ app.factory('TasksFetchService', function($q){
   return {
     getInitTasks: function(){
       var deferred = $q.defer();
+      o.tasks = [];
       
       firebase.database().ref('todo').once('value', function(snapshot) {
 
