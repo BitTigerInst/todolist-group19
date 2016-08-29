@@ -1,14 +1,13 @@
-  app.controller('MainCtrl', function($scope, TasksFetchService, $routeParams) {
+  app.controller('MainCtrl', function($scope, $routeParams, loadedTasks) {
   $scope.title = 'To Do List'; 
   console.log("MainCtrl");
 
-  $scope.initTasks = function(){
-    $scope.tasks = TasksFetchService.getInitTasks();
-  };
+  $scope.tasks = loadedTasks;
+  console.log("tasks length: " + $scope.tasks.length);
+
 
   
     $scope.status = $routeParams.status || '';
-    console.log("hahah: " + $scope.status);
      $scope.statusFilter = ($scope.status === 'active') ? 
       { completed: false } : ($scope.status === 'completed') ? 
       { completed: true } : ($scope.search) ? 
